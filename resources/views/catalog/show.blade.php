@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <div class="row">
 
 	<div class="col-sm-4">
@@ -15,6 +14,8 @@
 			<span style="font-weight: bold;">Año: </span>{{$movie->year}}
 			<br>
 			<span style="font-weight: bold;">Director: </span>{{$movie->director}}
+			<br>
+			<span style="font-weight: bold;">Restricción de edad: </span>{{$edad}}
 		</p>
 		<p><span style="font-weight: bold;">Resumen: </span>{{$movie->synopsis}}</p>
 		@if($movie->rented == true)

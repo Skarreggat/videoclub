@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use App\Edad;
 use Notification;
 
 class CatalogController extends Controller
@@ -17,8 +18,10 @@ class CatalogController extends Controller
 	public function getShow($id)
 	{
 		$movie = Movie::findOrFail($id);
-		return view('catalog.show', array('movie' => $movie));
-		//return view('catalog.show', array('arrayPeliculas'=>$this->arrayPeliculas[$id]));
+        $paraEdad = $movie->id_edades;
+        $edad = Edad::findOrFail($paraEdad);
+        $yee = $edad->edad;
+		return view('catalog.show', array('movie' => $movie, 'edad' => $yee));
 	}
 
 	public function getCreate()

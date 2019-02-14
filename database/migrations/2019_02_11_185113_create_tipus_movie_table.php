@@ -14,6 +14,7 @@ class CreateTipusMovieTable extends Migration
     public function up()
     {
         Schema::create('tipus_movie', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('id_movies')->unsigned();
             $table->foreign('id_movies')->references('id')->on('movies');
             $table->integer('id_tipus')->unsigned();
