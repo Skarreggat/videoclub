@@ -18,6 +18,17 @@
 			<span style="font-weight: bold;">Restricción de edad: </span>{{$edad}}
 		</p>
 		<p><span style="font-weight: bold;">Resumen: </span>{{$movie->synopsis}}</p>
+		<p>
+			@foreach($tipMovs as $tipMov)
+			@if($tipMov->id_movies == $movie->id)
+			@foreach($tipos as $tipo)
+			@if($tipo->id == $tipMov->id_tipus)
+			{{$tipo->tipo}}
+			@endif
+			@endforeach
+			@endif
+			@endforeach
+		</p>
 		@if($movie->rented == true)
 		<form action="{{action('CatalogController@putReturn', $movie->id)}}" 
 			method="POST" style="display:inline">

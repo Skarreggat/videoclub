@@ -25,11 +25,9 @@
 					<div class="form-group">
 						<label for="edad">Restricción de edad</label>
 						<select name="id_edades">
-							<option value="1">Todos los Públicos</option>							
-							<option value="2">+7</option>
-							<option value="3">+12</option>
-							<option value="4">+16</option>
-							<option value="5">+18</option>
+							@foreach($edades as $edad)
+							<option value="{{$edad->id}}">{{$edad->edad}}</option>
+							@endforeach
 						</select>
 					</div>
 
