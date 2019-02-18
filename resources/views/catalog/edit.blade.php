@@ -24,6 +24,17 @@
 					</div>
 
 					<div class="form-group">
+						<label for="edad">Restricción de edad</label>
+						<select name="id_edades">
+							<option value="1">Todos los Públicos</option>							
+							<option value="2">+7</option>
+							<option value="3">+12</option>
+							<option value="4" selected="selected">+16</option>
+							<option value="5">+18</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 						<label for="director">Director</label>
 						<input type="text" name="director" id="director" class="form-control" value="{{$movie->director}}">
 					</div>

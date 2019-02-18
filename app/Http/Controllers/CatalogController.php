@@ -43,6 +43,7 @@ class CatalogController extends Controller
         $m->director = $request->input('director');
         $m->poster = $request->input('poster');
         $m->synopsis = $request->input('synopsis');
+        $m->id_edades = $request->input('id_edades');
 
         $m->save();
         Notification::success("La película se ha guardado/modificado correctamente");
@@ -57,6 +58,7 @@ class CatalogController extends Controller
         $m->director = $request->input('director');
         $m->poster = $request->input('poster');
         $m->synopsis = $request->input('synopsis');
+        $m->id_edades = $request->input('id_edades');
 
         $m->save();
         Notification::success("La película se ha guardado/modificado correctamente");
