@@ -18,7 +18,7 @@
 			<span style="font-weight: bold;">Restricción de edad: </span>{{$edad}}
 		</p>
 		<p><span style="font-weight: bold;">Resumen: </span>{{$movie->synopsis}}</p>
-		<p>
+		<p><span style="font-weight: bold;">Formatos: </span>
 			@foreach($tipMovs as $tipMov)
 			@if($tipMov->id_movies == $movie->id)
 			@foreach($tipos as $tipo)

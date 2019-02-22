@@ -31,7 +31,8 @@ class CatalogController extends Controller
     public function getCreate()
     {
         $edades = Edad::all();
-        return view('catalog.create',array('edades' => $edades));
+        $tipo = Tipo::all();
+        return view('catalog.create',array('edades' => $edades, 'tipos' => $tipo));
     }
 
     public function getEdit($id)
@@ -45,14 +46,22 @@ class CatalogController extends Controller
   public function postCreate(Request $request)
   {
    $m = new Movie;
+   
    $m->title = $request->input('title');
    $m->year = $request->input('year');
    $m->director = $request->input('director');
    $m->poster = $request->input('poster');
    $m->synopsis = $request->input('synopsis');
    $m->id_edades = $request->input('id_edades');
-
+     //dd($request->input('formatos'));
    $m->save();
+   foreach ($request->input('formatos') as $value) {
+    $t = new Tipus_Movie;
+    $t->id_movies = $m->id;
+    $t->id_tipus = $value;
+    $t->save();
+   }
+
    Notification::success("La película se ha guardado/modificado correctamente");
    return redirect()->action('CatalogController@getIndex');
 }
@@ -99,5 +108,45 @@ public function deleteMovie(Request $request, $id){
    Notification::success("La película se ha borrado correctamente");
    return redirect()->action('CatalogController@getIndex');
 }
+
+public function showFormato(){
+    $formato = Tipo::all();
+    return view('formato.lista', array('arrayFormatos' => $formato));
+}
+public function getEditFormato($id){
+    $formato = Tipo::findOrFail($id);
+    return view('formato.editFormato', array('formato' => $formato));
+}
+public function putEditFormato(Request $request, $id){
+
+ $formato = Tipo::findOrFail($id);
+ $formato->tipo = $request->input('tipo');
+ $formato->save();
+ Notification::success("TIPO ACTUALIZADO/modificado!!");
+ return redirect('formato/lista');
+}
+
+public function getCreateFormato()
+{
+    return view('formato.createFormato');
+}
+
+public function postCreateFormato(Request $request)
+{
+   $m = new Tipo;
+   $m->tipo = $request->input('tipo');
+   $m->save();
+   Notification::success("El formato se ha guardado correctamente");
+   return redirect()->action('CatalogController@showFormato');
+}
+
+public function deleteFormato(Request $request, $id){
+
+   $m = Tipo::findOrFail($id);
+   $m->delete();
+   Notification::success("El formato se ha borrado correctamente");
+   return redirect()->action('CatalogController@showFormato');
+}
+
 
 }

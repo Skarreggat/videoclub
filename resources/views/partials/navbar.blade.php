@@ -20,6 +20,11 @@
                             <span>&#10010</span> Nueva película
                         </a>
                     </li>
+                    <li class="nav-item {{  Request::is('formato/lista') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/formato/lista')}}">
+                            Gestionar formatos
+                        </a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
