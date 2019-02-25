@@ -50,6 +50,16 @@
 						<label for="synopsis">Resumen</label>
 						<textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{$movie->synopsis}}</textarea>
 					</div>
+					<div class="form-group">
+						<label for="edad">Formatos disponibles</label><br>
+							@foreach($tipos as $tipo)
+							@if(in_array($tipo->id, $arrayForms))
+							<input type="checkbox" name="formatos[]" value="{{$tipo->id}}" checked>{{$tipo->tipo}}
+							@else
+							<input type="checkbox" name="formatos[]" value="{{$tipo->id}}" >{{$tipo->tipo}}
+							@endif
+							@endforeach
+					</div>
 
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">

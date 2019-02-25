@@ -39,74 +39,102 @@ class CatalogController extends Controller
     {
       $movie = Movie::findOrFail($id);
       $edades = Edad::all();
+      $tipo=Tipo::all();
+      $cadaTipo=Tipus_Movie::all();
+      $arrayFor[] = null;
+      foreach ($cadaTipo as $cadaTip) {
+          if($id == $cadaTip->id_movies){
+            array_push($arrayFor, $cadaTip->id_tipus);
+        }
+    }
         //dd($movie->id_edades);
-      return view('catalog.edit', array('movie' => $movie, 'edades' => $edades));
-  }
+    return view('catalog.edit', array('movie' => $movie, 'edades' => $edades, 'tipos' => $tipo, 'arrayForms'=>$arrayFor));
+}
 
-  public function postCreate(Request $request)
-  {
-   $m = new Movie;
-   
-   $m->title = $request->input('title');
-   $m->year = $request->input('year');
-   $m->director = $request->input('director');
-   $m->poster = $request->input('poster');
-   $m->synopsis = $request->input('synopsis');
-   $m->id_edades = $request->input('id_edades');
+public function postCreate(Request $request)
+{
+ $m = new Movie;
+
+ $m->title = $request->input('title');
+ $m->year = $request->input('year');
+ $m->director = $request->input('director');
+ $m->poster = $request->input('poster');
+ $m->synopsis = $request->input('synopsis');
+ $m->id_edades = $request->input('id_edades');
      //dd($request->input('formatos'));
-   $m->save();
-   foreach ($request->input('formatos') as $value) {
+ $m->save();
+ foreach ($request->input('formatos') as $value) {
     $t = new Tipus_Movie;
     $t->id_movies = $m->id;
     $t->id_tipus = $value;
     $t->save();
-   }
+}
 
-   Notification::success("La película se ha guardado/modificado correctamente");
-   return redirect()->action('CatalogController@getIndex');
+Notification::success("La película se ha guardado/modificado correctamente");
+return redirect()->action('CatalogController@getIndex');
 }
 
 public function putEdit(Request $request, $id){
 
-   $m = Movie::findOrFail($id);
-   $m->title = $request->input('title');
-   $m->year = $request->input('year');
-   $m->director = $request->input('director');
-   $m->poster = $request->input('poster');
-   $m->synopsis = $request->input('synopsis');
-   $m->id_edades = $request->input('id_edades');
+    $m = Movie::findOrFail($id);
+    $m->title = $request->input('title');
+    $m->year = $request->input('year');
+    $m->director = $request->input('director');
+    $m->poster = $request->input('poster');
+    $m->synopsis = $request->input('synopsis');
+    $m->id_edades = $request->input('id_edades');
 
-   $m->save();
-   Notification::success("La película se ha guardado/modificado correctamente");
-   return redirect('/catalog/show/' . $id);
+    $m->save();
+    $tipmov = Tipus_Movie::all();
+    foreach($tipmov as $ti){
+        if($id==$ti->id_movies){
+            $ti->delete();
+        }
+    }
+
+    foreach ($request->input('formatos') as $value) {
+        $t = new Tipus_Movie;
+        $t->id_movies = $m->id;
+        $t->id_tipus = $value;
+        $t->save();
+    }
+    Notification::success("La película se ha guardado/modificado correctamente");
+    return redirect('/catalog/show/' . $id);
 }
 
 public function putRent(Request $request, $id){
 
-   $m = Movie::findOrFail($id);
-   $m->rented = 1;
+ $m = Movie::findOrFail($id);
+ $m->rented = 1;
 
-   $m->save();
-   Notification::success("La película se ha alquilado correctamente");
-   return redirect('/catalog/show/' . $id);
+ $m->save();
+ Notification::success("La película se ha alquilado correctamente");
+ return redirect('/catalog/show/' . $id);
 }
 
 public function putReturn(Request $request, $id){
 
-   $m = Movie::findOrFail($id);
-   $m->rented = 0;
+ $m = Movie::findOrFail($id);
+ $m->rented = 0;
 
-   $m->save();
-   Notification::success("La película se ha devuelto correctamente");
-   return redirect('/catalog/show/' . $id);
+ $m->save();
+ Notification::success("La película se ha devuelto correctamente");
+ return redirect('/catalog/show/' . $id);
 }
 
 public function deleteMovie(Request $request, $id){
 
-   $m = Movie::findOrFail($id);
-   $m->delete();
-   Notification::success("La película se ha borrado correctamente");
-   return redirect()->action('CatalogController@getIndex');
+ $m = Movie::findOrFail($id);
+ $tipmov = Tipus_Movie::all();
+ foreach($tipmov as $ti){
+    if($id==$ti->id_movies){
+        $ti->delete();
+    }
+}
+
+$m->delete();
+Notification::success("La película se ha borrado correctamente");
+return redirect()->action('CatalogController@getIndex');
 }
 
 public function showFormato(){
@@ -119,11 +147,11 @@ public function getEditFormato($id){
 }
 public function putEditFormato(Request $request, $id){
 
- $formato = Tipo::findOrFail($id);
- $formato->tipo = $request->input('tipo');
- $formato->save();
- Notification::success("TIPO ACTUALIZADO/modificado!!");
- return redirect('formato/lista');
+   $formato = Tipo::findOrFail($id);
+   $formato->tipo = $request->input('tipo');
+   $formato->save();
+   Notification::success("TIPO ACTUALIZADO/modificado!!");
+   return redirect('formato/lista');
 }
 
 public function getCreateFormato()
@@ -133,19 +161,19 @@ public function getCreateFormato()
 
 public function postCreateFormato(Request $request)
 {
-   $m = new Tipo;
-   $m->tipo = $request->input('tipo');
-   $m->save();
-   Notification::success("El formato se ha guardado correctamente");
-   return redirect()->action('CatalogController@showFormato');
+ $m = new Tipo;
+ $m->tipo = $request->input('tipo');
+ $m->save();
+ Notification::success("El formato se ha guardado correctamente");
+ return redirect()->action('CatalogController@showFormato');
 }
 
 public function deleteFormato(Request $request, $id){
 
-   $m = Tipo::findOrFail($id);
-   $m->delete();
-   Notification::success("El formato se ha borrado correctamente");
-   return redirect()->action('CatalogController@showFormato');
+ $m = Tipo::findOrFail($id);
+ $m->delete();
+ Notification::success("El formato se ha borrado correctamente");
+ return redirect()->action('CatalogController@showFormato');
 }
 
 
