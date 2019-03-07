@@ -5,7 +5,16 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        @if(!Auth::check() )
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-link" href="{{route('register')}}">
+                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                            Register
+                        </a>
+                </ul>
+            </div>
+        @endif
         @if(Auth::check() )
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -20,9 +29,19 @@
                             <span>&#10010</span> Nueva película
                         </a>
                     </li>
+                    <li class="nav-item {{  Request::is('formato/lista') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/formato/lista')}}">
+                            Gestionar formatos
+                        </a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
+                    <li class="nav-item {{  Request::is('users') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/users')}}">
+                            Gestionar usuarios
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}

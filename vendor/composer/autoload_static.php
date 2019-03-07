@@ -12,16 +12,22 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'j' => 
+        array (
+            'jeremykenedy\\laravelusers\\' => 26,
+            'jeremykenedy\\LaravelRoles\\' => 26,
         ),
         'X' => 
         array (
@@ -70,6 +76,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         ),
         'M' => 
         array (
+            'Mpociot\\HasCompositeKey\\' => 24,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -105,6 +112,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
         ),
         'A' => 
         array (
@@ -118,6 +126,14 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'jeremykenedy\\laravelusers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeremykenedy/laravel-users/src',
+        ),
+        'jeremykenedy\\LaravelRoles\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -227,6 +243,10 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Mpociot\\HasCompositeKey\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpociot/laravel-composite-key/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -283,6 +303,10 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
         ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -330,7 +354,9 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Edad' => __DIR__ . '/../..' . '/app/Edad.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\HasCompositeKey' => __DIR__ . '/../..' . '/app/HasCompositeKey.php',
         'App\\Http\\Controllers\\APICatalogController' => __DIR__ . '/../..' . '/app/Http/Controllers/APICatalogController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -353,6 +379,8 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Tipo' => __DIR__ . '/../..' . '/app/Tipo.php',
+        'App\\Tipus_Movie' => __DIR__ . '/../..' . '/app/Tipus_Movie.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
@@ -362,6 +390,14 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'ConnectRelationshipsSeeder' => __DIR__ . '/../..' . '/database/seeds/ConnectRelationshipsSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
@@ -2001,6 +2037,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'Mpociot\\HasCompositeKey\\HasCompositeKey' => __DIR__ . '/..' . '/mpociot/laravel-composite-key/src/HasCompositeKey.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',
@@ -2375,6 +2412,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
         'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
+        'PermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PermissionsTableSeeder.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -2946,6 +2984,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RolesTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -3643,6 +3682,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
@@ -3663,6 +3703,25 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'jeremykenedy\\LaravelRoles\\Contracts\\HasRoleAndPermission' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/HasRoleAndPermission.php',
+        'jeremykenedy\\LaravelRoles\\Contracts\\PermissionHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/PermissionHasRelations.php',
+        'jeremykenedy\\LaravelRoles\\Contracts\\RoleHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/RoleHasRelations.php',
+        'jeremykenedy\\LaravelRoles\\Exceptions\\AccessDeniedException' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Exceptions/AccessDeniedException.php',
+        'jeremykenedy\\LaravelRoles\\Exceptions\\LevelDeniedException' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Exceptions/LevelDeniedException.php',
+        'jeremykenedy\\LaravelRoles\\Exceptions\\PermissionDeniedException' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Exceptions/PermissionDeniedException.php',
+        'jeremykenedy\\LaravelRoles\\Exceptions\\RoleDeniedException' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Exceptions/RoleDeniedException.php',
+        'jeremykenedy\\LaravelRoles\\Middleware\\VerifyLevel' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Middleware/VerifyLevel.php',
+        'jeremykenedy\\LaravelRoles\\Middleware\\VerifyPermission' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Middleware/VerifyPermission.php',
+        'jeremykenedy\\LaravelRoles\\Middleware\\VerifyRole' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Middleware/VerifyRole.php',
+        'jeremykenedy\\LaravelRoles\\Models\\Permission' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Models/Permission.php',
+        'jeremykenedy\\LaravelRoles\\Models\\Role' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Models/Role.php',
+        'jeremykenedy\\LaravelRoles\\RolesServiceProvider' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/RolesServiceProvider.php',
+        'jeremykenedy\\LaravelRoles\\Traits\\HasRoleAndPermission' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Traits/HasRoleAndPermission.php',
+        'jeremykenedy\\LaravelRoles\\Traits\\PermissionHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Traits/PermissionHasRelations.php',
+        'jeremykenedy\\LaravelRoles\\Traits\\RoleHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Traits/RoleHasRelations.php',
+        'jeremykenedy\\LaravelRoles\\Traits\\Slugable' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Traits/Slugable.php',
+        'jeremykenedy\\laravelusers\\App\\Http\\Controllers\\UsersManagementController' => __DIR__ . '/..' . '/jeremykenedy/laravel-users/src/App/Http/Controllers/UsersManagementController.php',
+        'jeremykenedy\\laravelusers\\LaravelUsersServiceProvider' => __DIR__ . '/..' . '/jeremykenedy/laravel-users/src/LaravelUsersServiceProvider.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

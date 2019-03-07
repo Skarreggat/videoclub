@@ -25,5 +25,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put('catalog/rent/{id}', 'CatalogController@putRent');
 	Route::put('catalog/return/{id}', 'CatalogController@putReturn');
 	Route::delete('catalog/delete/{id}', 'CatalogController@deleteMovie');
+	Route::get('formato/lista', 'CatalogController@showFormato')->name('formatos');
+	Route::get('formato/editFormato/{id}', 'CatalogController@getEditFormato')->name('editFormato');
+	Route::put('formato/editFormato/{id}', 'CatalogController@putEditFormato');
+	Route::get('formato/createFormato', 'CatalogController@getCreateFormato')->name('createFormato');
+	Route::post('formato/createFormato', 'CatalogController@postCreateFormato');
+	Route::delete('formato/delete/{id}', 'CatalogController@deleteFormato');
 });
 

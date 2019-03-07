@@ -25,11 +25,9 @@
 					<div class="form-group">
 						<label for="edad">Restricción de edad</label>
 						<select name="id_edades">
-							<option value="1">Todos los Públicos</option>							
-							<option value="2">+7</option>
-							<option value="3">+12</option>
-							<option value="4">+16</option>
-							<option value="5">+18</option>
+							@foreach($edades as $edad)
+							<option value="{{$edad->id}}">{{$edad->edad}}</option>
+							@endforeach
 						</select>
 					</div>
 
@@ -46,6 +44,13 @@
 					<div class="form-group">
 						<label for="synopsis">Resumen</label>
 						<textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="edad">Formatos disponibles</label><br>
+							@foreach($tipos as $tipo)
+							<input type="checkbox" name="formatos[]" value="{{$tipo->id}}">{{$tipo->tipo}}
+							@endforeach
 					</div>
 
 					<div class="form-group text-center">

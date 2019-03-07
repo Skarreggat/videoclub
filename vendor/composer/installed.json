@@ -690,6 +690,118 @@
         "description": "Highlight PHP code in terminal"
     },
     {
+        "name": "jeremykenedy/laravel-roles",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremykenedy/laravel-roles.git",
+            "reference": "4c307ec32043e30c9c11c22249cd80750dfec145"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeremykenedy/laravel-roles/zipball/4c307ec32043e30c9c11c22249cd80750dfec145",
+            "reference": "4c307ec32043e30c9c11c22249cd80750dfec145",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+            "php": ">=5.6.4"
+        },
+        "time": "2019-02-28T01:05:13+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "jeremykenedy\\LaravelRoles\\RolesServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "jeremykenedy\\LaravelRoles\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Bičan",
+                "email": "romanbican@seznam.cz"
+            },
+            {
+                "name": "Jeremy Kenedy",
+                "email": "jeremykenedy@gmail.com"
+            },
+            {
+                "name": "Ultraware"
+            }
+        ],
+        "description": "Powerful package for handling roles and permissions in Laravel. Supports Laravel 5.3 and higher",
+        "keywords": [
+            "acl",
+            "laravel",
+            "levels",
+            "permissions",
+            "roles"
+        ]
+    },
+    {
+        "name": "jeremykenedy/laravel-users",
+        "version": "v2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremykenedy/laravel-users.git",
+            "reference": "bb4ecc94a43c4f2a0911b1bcf2ea126dc8f4970b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeremykenedy/laravel-users/zipball/bb4ecc94a43c4f2a0911b1bcf2ea126dc8f4970b",
+            "reference": "bb4ecc94a43c4f2a0911b1bcf2ea126dc8f4970b",
+            "shasum": ""
+        },
+        "require": {
+            "laravelcollective/html": "^5.4.0|^5.5.0",
+            "php": ">=7.0.0"
+        },
+        "time": "2018-02-11T00:59:10+00:00",
+        "type": "package",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "jeremykenedy\\laravelusers\\LaravelUsersServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "jeremykenedy\\laravelusers\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "jeremykenedy",
+                "email": "jeremykenedy@gmail.com"
+            }
+        ],
+        "description": "Laravel Users Management CRUD Package",
+        "keywords": [
+            "Users",
+            "crud",
+            "laravel",
+            "management"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v5.5.44",
         "version_normalized": "5.5.44.0",
@@ -889,6 +1001,76 @@
             "laravel",
             "psysh"
         ]
+    },
+    {
+        "name": "laravelcollective/html",
+        "version": "v5.5.4",
+        "version_normalized": "5.5.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "04c596a69975b901f2223eb6eb4adf55354121c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/04c596a69975b901f2223eb6eb4adf55354121c2",
+            "reference": "04c596a69975b901f2223eb6eb4adf55354121c2",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "5.5.*",
+            "illuminate/routing": "5.5.*",
+            "illuminate/session": "5.5.*",
+            "illuminate/support": "5.5.*",
+            "illuminate/view": "5.5.*",
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "illuminate/database": "5.5.*",
+            "mockery/mockery": "~0.9.4",
+            "phpunit/phpunit": "~5.4"
+        },
+        "time": "2018-03-24T00:39:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.5-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Collective\\Html\\HtmlServiceProvider"
+                ],
+                "aliases": {
+                    "Form": "Collective\\Html\\FormFacade",
+                    "Html": "Collective\\Html\\HtmlFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "https://laravelcollective.com"
     },
     {
         "name": "league/flysystem",
@@ -1122,6 +1304,45 @@
             "logging",
             "psr-3"
         ]
+    },
+    {
+        "name": "mpociot/laravel-composite-key",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mpociot/laravel-composite-key.git",
+            "reference": "520e33c6ed01be0ed377e56ab2706d9e1c56bd60"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mpociot/laravel-composite-key/zipball/520e33c6ed01be0ed377e56ab2706d9e1c56bd60",
+            "reference": "520e33c6ed01be0ed377e56ab2706d9e1c56bd60",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "5.*",
+            "php": ">=5.5.9"
+        },
+        "time": "2016-05-17T20:11:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Mpociot\\HasCompositeKey\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marcel Pociot",
+                "email": "m.pociot@gmail.com"
+            }
+        ],
+        "description": "Support composite keys in your laravel app."
     },
     {
         "name": "mtdowling/cron-expression",
@@ -2112,7 +2333,8 @@
         "keywords": [
             "mock",
             "xunit"
-        ]
+        ],
+        "abandoned": true
     },
     {
         "name": "psr/container",

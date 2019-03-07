@@ -6,6 +6,7 @@ use App\Movie;
 use App\Edad;
 use App\Tipo;
 use App\Tipus_Movie;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -197,23 +198,6 @@ class DatabaseSeeder extends Seeder
             'id_edades' => '2'
         )
     );
-private $arrayUsuarios = array(
-	array(
-		'name' => 'Dani',
-		'email' => 'dani@gmail.com', 
-		'password' => '123456' 
-	),
-	array(
-		'name' => 'Alex',
-		'email' => 'alex@gmail.com', 
-		'password' => 'patata'
-	),
-	array(
-		'name' => 'Adrian',
-		'email' => 'adrian@gmail.com', 
-		'password' => 'paratodo'
-	)
-);
 
 private $arrayEdades = array(
     array(
@@ -380,8 +364,6 @@ private $arrayTipos_Movies = array(
 
 public function run()
 {   
-    self::seedUsers();
-    $this->command->info('Tabla usuarios inicializada con datos!');
     self::seedEdades();
     $this->command->info('Tabla edades inicializada con datos!');
     self::seedCatalog();
@@ -390,6 +372,15 @@ public function run()
     $this->command->info('Tabla tipus inicializada con datos!');
     self::seedTipos_Movies();
     $this->command->info('Tabla tipus_movie inicializada con datos!');
+
+    Model::unguard();
+
+            $this->call('PermissionsTableSeeder');
+            $this->call('RolesTableSeeder');
+            $this->call('ConnectRelationshipsSeeder');
+            $this->call('UsersTableSeeder');
+
+        Model::reguard();
 }
 
 private function seedCatalog(){
@@ -405,17 +396,6 @@ private function seedCatalog(){
         $p->id_edades = $pelicula['id_edades'];
         $p->save();
     }
-}
-
-private function seedUsers(){
-	DB::table('users')->delete();
-	foreach( $this->arrayUsuarios as $usuario ) {
-		$u = new User;
-		$u->name = $usuario['name'];
-		$u->email = $usuario['email'];
-		$u->password = bcrypt($usuario['password']);
-		$u->save();
-	}
 }
 
 private function seedEdades(){

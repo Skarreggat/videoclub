@@ -22,18 +22,20 @@
 						<label for="year">Año</label>
 						<input type="text" name="year" id="year" class="form-control" value="{{$movie->year}}">
 					</div>
-
+					
 					<div class="form-group">
 						<label for="edad">Restricción de edad</label>
 						<select name="id_edades">
-							<option value="1">Todos los Públicos</option>							
-							<option value="2">+7</option>
-							<option value="3">+12</option>
-							<option value="4" selected="selected">+16</option>
-							<option value="5">+18</option>
+							@foreach($edades as $edad)
+								@if($edad->id == $movie->id_edades)
+									<option value="{{$edad->id}}" selected="selected">{{$edad->edad}}</option>
+								@else
+									<option value="{{$edad->id}}">{{$edad->edad}}</option>
+								@endif
+							@endforeach
 						</select>
 					</div>
-
+					
 					<div class="form-group">
 						<label for="director">Director</label>
 						<input type="text" name="director" id="director" class="form-control" value="{{$movie->director}}">
@@ -47,6 +49,16 @@
 					<div class="form-group">
 						<label for="synopsis">Resumen</label>
 						<textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{$movie->synopsis}}</textarea>
+					</div>
+					<div class="form-group">
+						<label for="edad">Formatos disponibles</label><br>
+							@foreach($tipos as $tipo)
+							@if(in_array($tipo->id, $arrayForms))
+							<input type="checkbox" name="formatos[]" value="{{$tipo->id}}" checked>{{$tipo->tipo}}
+							@else
+							<input type="checkbox" name="formatos[]" value="{{$tipo->id}}" >{{$tipo->tipo}}
+							@endif
+							@endforeach
 					</div>
 
 					<div class="form-group text-center">
