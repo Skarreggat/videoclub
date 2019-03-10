@@ -26,18 +26,27 @@
         @endif
         @level(1)
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                   {{-- <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{route('catalog')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Catálogo
-                        </a>
-                    </li>
-                    --}}
-                    @level(5)
-                    <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
+                                   @level(5)
+                    
+                    <ul class="navbar-nav mr-auto">
+ 
+                </ul>
+
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        Gestiones de Administrador
+                                        <i class="fas fa-caret-down"></i>
+                                    </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/catalog/create')}}">
                             <span>&#10010</span> Nueva película
+                        </a>
+                    </li>
+                    <li class="nav-item {{  Request::is('users') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/users')}}">
+                            Gestionar usuarios
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('formato/lista') ? 'active' : ''}}">
@@ -45,14 +54,13 @@
                             Gestionar formatos
                         </a>
                     </li>
-                </ul>
-
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item {{  Request::is('users') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/users')}}">
-                            Gestionar usuarios
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('activity')}}">
+                            Logs
                         </a>
                     </li>
+                </ul>
+                </li>
                     @endlevel
                     
                             {{-- Authentication Links --}}

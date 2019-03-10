@@ -17,6 +17,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '15062e773c449c03c8cc927032efea5a' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Logic/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -28,6 +29,7 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         array (
             'jeremykenedy\\laravelusers\\' => 26,
             'jeremykenedy\\LaravelRoles\\' => 26,
+            'jeremykenedy\\LaravelLogger\\' => 27,
         ),
         'X' => 
         array (
@@ -86,6 +88,8 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         ),
         'J' => 
         array (
+            'Jaybizzle\\LaravelCrawlerDetect\\' => 31,
+            'Jaybizzle\\CrawlerDetect\\' => 24,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -134,6 +138,10 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'jeremykenedy\\LaravelRoles\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src',
+        ),
+        'jeremykenedy\\LaravelLogger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -258,6 +266,14 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Jaybizzle\\LaravelCrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/laravel-crawler-detect/src',
+        ),
+        'Jaybizzle\\CrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -1801,6 +1817,13 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Exclusions' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Exclusions.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Headers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Headers.php',
+        'Jaybizzle\\LaravelCrawlerDetect\\Facades\\LaravelCrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/laravel-crawler-detect/src/Facades/LaravelCrawlerDetect.php',
+        'Jaybizzle\\LaravelCrawlerDetect\\LaravelCrawlerDetectServiceProvider' => __DIR__ . '/..' . '/jaybizzle/laravel-crawler-detect/src/LaravelCrawlerDetectServiceProvider.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'Krucas\\Notification\\Collection' => __DIR__ . '/..' . '/edvinaskrucas/notification/src/Krucas/Notification/Collection.php',
         'Krucas\\Notification\\Facades\\Notification' => __DIR__ . '/..' . '/edvinaskrucas/notification/src/Krucas/Notification/Facades/Notification.php',
@@ -3703,6 +3726,20 @@ class ComposerStaticInit175f7be636a3b17fb79ac53c87747732
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'jeremykenedy\\LaravelLogger\\App\\Http\\Controllers\\LaravelLoggerController' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Http/Controllers/LaravelLoggerController.php',
+        'jeremykenedy\\LaravelLogger\\App\\Http\\Middleware\\LogActivity' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Http/Middleware/LogActivity.php',
+        'jeremykenedy\\LaravelLogger\\App\\Http\\Traits\\ActivityLogger' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Http/Traits/ActivityLogger.php',
+        'jeremykenedy\\LaravelLogger\\App\\Http\\Traits\\IpAddressDetails' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Http/Traits/IpAddressDetails.php',
+        'jeremykenedy\\LaravelLogger\\App\\Http\\Traits\\UserAgentDetails' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Http/Traits/UserAgentDetails.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogAuthenticated' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogAuthenticated.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogAuthenticationAttempt' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogAuthenticationAttempt.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogFailedLogin' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogFailedLogin.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogLockout' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogLockout.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogPasswordReset' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogPasswordReset.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogSuccessfulLogin' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogSuccessfulLogin.php',
+        'jeremykenedy\\LaravelLogger\\App\\Listeners\\LogSuccessfulLogout' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Listeners/LogSuccessfulLogout.php',
+        'jeremykenedy\\LaravelLogger\\App\\Models\\Activity' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/app/Models/Activity.php',
+        'jeremykenedy\\LaravelLogger\\LaravelLoggerServiceProvider' => __DIR__ . '/..' . '/jeremykenedy/laravel-logger/src/LaravelLoggerServiceProvider.php',
         'jeremykenedy\\LaravelRoles\\Contracts\\HasRoleAndPermission' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/HasRoleAndPermission.php',
         'jeremykenedy\\LaravelRoles\\Contracts\\PermissionHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/PermissionHasRelations.php',
         'jeremykenedy\\LaravelRoles\\Contracts\\RoleHasRelations' => __DIR__ . '/..' . '/jeremykenedy/laravel-roles/src/Contracts/RoleHasRelations.php',
