@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-	<a href="/formato/createFormato">
+	<a href="createFormato">
 		<button type="button" class="btn btn-warning">Añadir nuevo formato</button>
 	</a>
 </div>
@@ -22,7 +22,7 @@
 				{{$formato->tipo}}
 			</td>
 			<td>
-				<a href="/formato/editFormato/{{$formato->id}}"><button type="button" class="btn btn-primary">EDITAR</button></a>
+				<a href="editFormato/{{$formato->id}}"><button type="button" class="btn btn-primary">EDITAR</button></a>
 				<form action="{{action('CatalogController@deleteFormato', $formato->id)}}" 
 					method="POST" style="display:inline">
 					{{ method_field('DELETE') }}

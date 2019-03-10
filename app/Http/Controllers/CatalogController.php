@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Movie;
 use App\Edad;
 use App\Tipo;
+use App\User;
 use App\Tipus_Movie;
 use Notification;
 

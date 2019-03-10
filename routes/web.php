@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@getHome');
+Route::get('/', 'CatalogController@getIndex');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => 'auth'], function() {
 	Route::get('catalog/index', 'CatalogController@getIndex')->name('catalog');
 	Route::get('catalog/show/{id}', 'CatalogController@getShow')->name('show');
+
+Route::group(['middleware' => 'auth'], function() {
+
 	Route::get('catalog/create', 'CatalogController@getCreate')->name('create');
 	Route::get('catalog/edit/{id}', 'CatalogController@getEdit')->name('edit');
 	Route::post('catalog/create', 'CatalogController@postCreate');

@@ -45,7 +45,7 @@
                   </p>
                   <div class="text-center text-left-tablet margin-bottom-1 row">
                     <div class="col-xs-6">
-                      <a href="/users/{{$user->id}}/edit" class="btn btn-sm btn-warning pull-right">
+                      <a href="{{ URL::to('users/' . $user->id . '/edit') }}" class="btn btn-sm btn-warning pull-right">
                         @lang('laravelusers::laravelusers.buttons.edit-user')
                       </a>
                     </div>

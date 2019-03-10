@@ -60,5 +60,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'auth.basic.once' => \App\Http\Middleware\AuthenticateOnceWithBasicAuth::class,
         'role' => \jeremykenedy\LaravelRoles\Middleware\VerifyRole::class,
+        'permission' => \jeremykenedy\LaravelRoles\Middleware\VerifyPermission::class,
+        'level' => \jeremykenedy\LaravelRoles\Middleware\VerifyLevel::class,
     ];
 }

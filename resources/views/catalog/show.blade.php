@@ -29,6 +29,10 @@
 			@endif
 			@endforeach
 		</p>
+
+		@level(1)
+    
+
 		@if($movie->rented == true)
 		<form action="{{action('CatalogController@putReturn', $movie->id)}}" 
 			method="POST" style="display:inline">
@@ -50,7 +54,9 @@
 			</button>
 		</form>		
 		@endif
-		<a href="/catalog/edit/{{$movie->id}}" class="btn btn-warning" style="color: white; border-color: orange;"><i class="fas fa-pencil-alt"> Editar película</i></a>
+		@endlevel
+		@level(5)
+		<a href="{{ URL::to('/catalog/edit/' . $movie->id )}}" class="btn btn-warning" style="color: white; border-color: orange;"><i class="fas fa-pencil-alt"> Editar película</i></a>
 		<form action="{{action('CatalogController@deleteMovie', $movie->id)}}" 
 			method="POST" style="display:inline">
 			{{ method_field('DELETE') }}
@@ -59,8 +65,10 @@
 				Borrar película
 			</button>
 		</form>	
-		<a href="/catalog/index" class="btn btn-default" style="border-color: grey;"><i class="fas fa-angle-left"> Volver al listado</i></a>		
-
+		
+		@endlevel
+		<a href="{{route('catalog')}}" class="btn btn-default" style="border-color: grey;"><i class="fas fa-angle-left"> Volver al listado</i></a>		
+		
 	</div>
 </div>
 
