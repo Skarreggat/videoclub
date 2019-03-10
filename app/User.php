@@ -5,11 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use jeremykenedy\LaravelLogger\App\Http\Traits\ActivityLogger;
+
 
 class User extends Authenticatable
 {
-    use ActivityLogger;
+   
     use Notifiable;
     use HasRoleAndPermission;
 

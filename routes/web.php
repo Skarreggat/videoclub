@@ -10,14 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['middleware' => ['web', 'activity']], function () {
 Route::get('/', 'CatalogController@getIndex');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('catalog/index', 'CatalogController@getIndex')->name('catalog');
 	Route::get('catalog/show/{id}', 'CatalogController@getShow')->name('show');
-
-Route::group(['middleware' => 'auth'], function() {
+});
+Route::group(['middleware' => ['auth','web', 'activity']], function() {
 
 	Route::get('catalog/create', 'CatalogController@getCreate')->name('create');
 	Route::get('catalog/edit/{id}', 'CatalogController@getEdit')->name('edit');
