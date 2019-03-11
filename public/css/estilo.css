@@ -1,0 +1,10 @@
+.table-responsive {
+    display: inline-table;
+}
+#divTablaFormato{
+	margin-top: 25px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-color: #4fcbf85c !important;
+}
