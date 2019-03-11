@@ -254,4 +254,6 @@ if (Request::is('activity/cleared')) {
             {!! trans('LaravelLogger::laravel-logger.pagination.countText', ['firstItem' => $activities->firstItem(), 'lastItem' => $activities->lastItem(), 'total' => $activities->total(), 'perPage' => $activities->perPage()]) !!}
         </p>
     </div>
+
 @endif
+
